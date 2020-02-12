@@ -61,8 +61,18 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>This is a test.I really have a long way to go to build a real blog, I hope I can finish it in this month.<br>Come on :)</p>
+        <h1 id="My-first-new-post"><a href="#My-first-new-post" class="headerlink" title="My  first new post"></a>My  first new post</h1><a id="more"></a>
+<p>This post is written to remind me of differnt kinds of ways to record information.</p>
+<div class="note success">
+            <h2 id="about-me"><a href="#about-me" class="headerlink" title="about me"></a>about me</h2><p>Nothing special, I am an ordinary girl. Just like every girl you see when you walk on the street, we are too familiar to be recognized, so nobody remember us. But it does not bother us to have our own world.</p>
+          </div>
 
+<span class="label info">label</span>
+
+<a class="btn" href="url" title="title"><i class="fa fa-hand-o-right fa-fw"></i>button</a>
+<p>what it will look like?</p>
+<blockquote class='blockquote-center'><p>人类的悲欢并不相通，我只觉得他们吵闹。<br><strong>——鲁迅</strong></p>
+</blockquote>
       </div>
     </div>
   </div>
@@ -189,5 +199,35 @@
   });
 </script>
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+  TeX: {
+          extensions: ["mhchem.js"]
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-MML-AM_SVG"></script>
 </body>
 </html>
