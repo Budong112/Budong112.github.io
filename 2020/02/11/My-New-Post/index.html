@@ -95,7 +95,7 @@
 </div>
 
 </div>
-
+<div class="comment"><div id="comments"></div></div>
 <footer>
   <div>
   Copyright &copy; 2019.<a href="/">I know nothing.</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
@@ -151,7 +151,8 @@
     <li class="has-sub"><span class="dropdown-heading">
       <i class="fa fa-link fa-fw"></i>友链</span>
         <ul>
-          <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+          <li> <a href="https://lx.blleng." target="_blank">Theme-Lx</a></li>
+        <li> <a href="https://clarice-lj.github.io" target="_blank">Clarice</a></li>
         </ul>
     </li>
   </ul>
@@ -166,6 +167,26 @@
 <script src="/js/jquery.stellar.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/local.search.js"></script>
+<script src="//unpkg.com/valine"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'gkKQv6T1MDEKGaXtHhJKGOCt-gzGzoHsz',
+    appKey: '0JGnkwwsNLmJCzBQIc99Wchf',
+    placeholder: '此处留言',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
 
 </body>
 </html>
