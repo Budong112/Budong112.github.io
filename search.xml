@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vim常用命令总结</title>
+    <url>/2020/02/13/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="vimtutor记录"><a href="#vimtutor记录" class="headerlink" title="vimtutor记录"></a>vimtutor记录</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><strong>x</strong> normal模式下删除</p>
+<p><strong>i</strong> 光标处插入文本</p>
+<p><strong>A</strong> 行末添加文本</p>
+<p><strong>a</strong> 光标后插入</p>
+<p><strong>R</strong> 一直替换知道按ESC退出</p>
+<h3 id="normal模式下"><a href="#normal模式下" class="headerlink" title="normal模式下:"></a>normal模式下:</h3><p><strong>dw</strong> 从光标处删除至下一个单词起始处</p>
+<p><strong>de</strong> 从光标处删除到单词末尾</p>
+<p><strong>d$</strong>  从光标处删除至当前行尾</p>
+<h2 id="使用计数指定动作"><a href="#使用计数指定动作" class="headerlink" title="使用计数指定动作"></a>使用计数指定动作</h2><p>e.g.:<strong>2w</strong> <strong>3e</strong> <strong>0</strong>(移动光标到行首)</p>
+<h2 id="使用计数以删除更多"><a href="#使用计数以删除更多" class="headerlink" title="使用计数以删除更多"></a>使用计数以删除更多</h2><p>e.g.:<strong>d2w</strong></p>
+<h2 id="操作整行"><a href="#操作整行" class="headerlink" title="操作整行"></a>操作整行</h2><p>e.g.:<strong>2dd</strong></p>
+<h2 id="撤销类命令"><a href="#撤销类命令" class="headerlink" title="撤销类命令"></a>撤销类命令</h2><p><strong>u</strong> 撤销最后执行的命令</p>
+<p><strong>U</strong> 撤销对整行的修改</p>
+<p><strong>CTRL-R</strong> 撤销以前的撤销命令，恢复以前的操作结果</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Normal模式下修改命令格式：<br><strong>operator [number] motion</strong></p>
+<h2 id="置入类命令"><a href="#置入类命令" class="headerlink" title="置入类命令"></a>置入类命令</h2><p><strong>dd</strong>删除整行，保存到VIM寄存器中，光标移动到准备置入位置的上方，Normal模式下<em>p</em>粘贴置入</p>
+<h2 id="替换类命令"><a href="#替换类命令" class="headerlink" title="替换类命令"></a>替换类命令</h2><p>输入<strong>r</strong>和一个<strong>字符</strong>替换光标所在位置字符</p>
+<h2 id="更改类命令"><a href="#更改类命令" class="headerlink" title="更改类命令"></a>更改类命令</h2><p><strong>ce</strong> <strong>cw</strong> 改变文本直到一个单词的末尾</p>
+<p><strong>c$</strong> 改变至行尾</p>
+<h2 id="定位及文件状态"><a href="#定位及文件状态" class="headerlink" title="定位及文件状态"></a>定位及文件状态</h2><p><strong>CTRL-G</strong> 显示光标所在行位置和文件状态信息</p>
+<p><strong>[number]G</strong> 跳转到文件指定行</p>
+<p><strong>G</strong> 跳转到文件最后一行</p>
+<p><strong>gg</strong> 跳转到文件第一行</p>
+<h2 id="搜索类命令"><a href="#搜索类命令" class="headerlink" title="搜索类命令"></a>搜索类命令</h2><p><strong>/要查找字符串&lt;回车&gt;</strong> 从开头开始查找</p>
+<p><strong>?要查找字符串&lt;回车&gt;</strong> 从末尾逆向查找</p>
+<p><strong>n</strong> 查找同上一次的字符串</p>
+<p><strong>N</strong> 相反方向查找同上一次的字符串</p>
+<p><strong>CTRL-O</strong> 回到之前位置，重复按回退更多步</p>
+<p><strong>CTRL-I</strong> 跳转到最新位置</p>
+<p><strong>%</strong> 配对括号查找</p>
+<h2 id="替换命令"><a href="#替换命令" class="headerlink" title="替换命令"></a>替换命令</h2><p><strong>:s/old/new &lt;回车&gt;</strong> 将光标所在行第一个old替换成new</p>
+<p><strong>:s/old/new/g &lt;回车&gt;</strong> 将光标所在行所有old替换成new</p>
+<p><strong>:#,#s/old/new/g</strong> （其中#,#代表替换替换操作的若干行首尾两行行号）</p>
+<p><strong>:%s/old/new/g</strong> 替换整个文件种的每个匹配串</p>
+<p><strong>:%s/old/new/gc</strong> 会找到整个文件中每个匹配串，并且对每个匹配串提示是否进行替换</p>
+<h2 id="VIM执行外部命令"><a href="#VIM执行外部命令" class="headerlink" title="VIM执行外部命令"></a>VIM执行外部命令</h2><p><strong>!:外部命令</strong>（包括带命令行参数的）</p>
+<p><strong>:r FILENAME</strong> 将文件提取到光标处</p>
+<p><strong>:r !ls</strong> 读取ls命令的输出到放置在光标下</p>
+<h2 id="打开类命令"><a href="#打开类命令" class="headerlink" title="打开类命令"></a>打开类命令</h2><p><strong>o</strong> 光标下方打开新一行并进入插入模式</p>
+<p><strong>O</strong> 光标上方打开新一行并进入插入模式</p>
+<h2 id="复制粘贴文本"><a href="#复制粘贴文本" class="headerlink" title="复制粘贴文本"></a>复制粘贴文本</h2><p>view模式下选择，<strong>y</strong>复制，<strong>p</strong>粘贴</p>
+<p>y也可作操作符，如<strong>yw</strong>复制一个单词</p>
+<h2 id="设置类命令选项"><a href="#设置类命令选项" class="headerlink" title="设置类命令选项"></a>设置类命令选项</h2><p><strong>:set ic</strong> (Ignore Case)忽略大小写</p>
+<p><strong>:set noic</strong> 取消忽略大小写</p>
+<p><strong>/匹配项\c &lt;回车&gt;</strong> 仅在一次查找时忽略字母大小写</p>
+<p><strong>:set hls</strong> (hlsearch) 匹配项高亮显示</p>
+<p><strong>:nohlsearch</strong> (移除匹配项高亮显示)</p>
+<p><strong>:set is</strong> (incsearch)查找短语时显示部分匹配</p>
+<p>(ps:设置中选项名可使用完整版本，也可用缩略版本)</p>
+<h2 id="使用在线帮助系统"><a href="#使用在线帮助系统" class="headerlink" title="使用在线帮助系统"></a>使用在线帮助系统</h2><p><strong>help cmd</strong> 找到关于cmd命令的帮助</p>
+<p><strong>CTRL-W CTRL-W</strong> 在窗口之前跳转</p>
+<p><strong>:q</strong> 关闭帮助窗口</p>
+<h2 id="创建vimrc"><a href="#创建vimrc" class="headerlink" title="创建vimrc"></a>创建vimrc</h2><p>启动脚本文件保存偏好设置</p>
+<h2 id="补全功能"><a href="#补全功能" class="headerlink" title="补全功能"></a>补全功能</h2><p><strong>CTRL-D</strong> 查找可能的命令补全结果</p>
+<p><strong>TAB</strong> 使用一个补全</p>
+]]></content>
+      <tags>
+        <tag>毫无可读性的学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>My New Post</title>
     <url>/2020/02/11/My-New-Post/</url>
     <content><![CDATA[<h1 id="My-first-new-post"><a href="#My-first-new-post" class="headerlink" title="My  first new post"></a>My  first new post</h1><a id="more"></a>

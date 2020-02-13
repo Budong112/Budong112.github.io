@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vim常用命令总结 | I know nothing.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Budong">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.0.0',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/bitbug_favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "between-clouds",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300|Noto+Serif+SC&amp;display=swap">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/person_1.jpg"></a></div>
+    <span>2020-02-13</span>
+    <h2>Vim常用命令总结</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E6%AF%AB%E6%97%A0%E5%8F%AF%E8%AF%BB%E6%80%A7%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">毫无可读性的学习笔记</a></div>
+    <div class="social-links">
+<a href="https://github.com/budong112" target="_blank"><i class="fa fa-github fa-fw"></i></a><a href="mailto:2806668220@qq.com"><i class="fa fa-envelope fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h1 id="vimtutor记录"><a href="#vimtutor记录" class="headerlink" title="vimtutor记录"></a>vimtutor记录</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><strong>x</strong> normal模式下删除</p>
+<p><strong>i</strong> 光标处插入文本</p>
+<p><strong>A</strong> 行末添加文本</p>
+<p><strong>a</strong> 光标后插入</p>
+<p><strong>R</strong> 一直替换知道按ESC退出</p>
+<h3 id="normal模式下"><a href="#normal模式下" class="headerlink" title="normal模式下:"></a>normal模式下:</h3><p><strong>dw</strong> 从光标处删除至下一个单词起始处</p>
+<p><strong>de</strong> 从光标处删除到单词末尾</p>
+<p><strong>d$</strong>  从光标处删除至当前行尾</p>
+<h2 id="使用计数指定动作"><a href="#使用计数指定动作" class="headerlink" title="使用计数指定动作"></a>使用计数指定动作</h2><p>e.g.:<strong>2w</strong> <strong>3e</strong> <strong>0</strong>(移动光标到行首)</p>
+<h2 id="使用计数以删除更多"><a href="#使用计数以删除更多" class="headerlink" title="使用计数以删除更多"></a>使用计数以删除更多</h2><p>e.g.:<strong>d2w</strong></p>
+<h2 id="操作整行"><a href="#操作整行" class="headerlink" title="操作整行"></a>操作整行</h2><p>e.g.:<strong>2dd</strong></p>
+<h2 id="撤销类命令"><a href="#撤销类命令" class="headerlink" title="撤销类命令"></a>撤销类命令</h2><p><strong>u</strong> 撤销最后执行的命令</p>
+<p><strong>U</strong> 撤销对整行的修改</p>
+<p><strong>CTRL-R</strong> 撤销以前的撤销命令，恢复以前的操作结果</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Normal模式下修改命令格式：<br><strong>operator [number] motion</strong></p>
+<h2 id="置入类命令"><a href="#置入类命令" class="headerlink" title="置入类命令"></a>置入类命令</h2><p><strong>dd</strong>删除整行，保存到VIM寄存器中，光标移动到准备置入位置的上方，Normal模式下<em>p</em>粘贴置入</p>
+<h2 id="替换类命令"><a href="#替换类命令" class="headerlink" title="替换类命令"></a>替换类命令</h2><p>输入<strong>r</strong>和一个<strong>字符</strong>替换光标所在位置字符</p>
+<h2 id="更改类命令"><a href="#更改类命令" class="headerlink" title="更改类命令"></a>更改类命令</h2><p><strong>ce</strong> <strong>cw</strong> 改变文本直到一个单词的末尾</p>
+<p><strong>c$</strong> 改变至行尾</p>
+<h2 id="定位及文件状态"><a href="#定位及文件状态" class="headerlink" title="定位及文件状态"></a>定位及文件状态</h2><p><strong>CTRL-G</strong> 显示光标所在行位置和文件状态信息</p>
+<p><strong>[number]G</strong> 跳转到文件指定行</p>
+<p><strong>G</strong> 跳转到文件最后一行</p>
+<p><strong>gg</strong> 跳转到文件第一行</p>
+<h2 id="搜索类命令"><a href="#搜索类命令" class="headerlink" title="搜索类命令"></a>搜索类命令</h2><p><strong>/要查找字符串&lt;回车&gt;</strong> 从开头开始查找</p>
+<p><strong>?要查找字符串&lt;回车&gt;</strong> 从末尾逆向查找</p>
+<p><strong>n</strong> 查找同上一次的字符串</p>
+<p><strong>N</strong> 相反方向查找同上一次的字符串</p>
+<p><strong>CTRL-O</strong> 回到之前位置，重复按回退更多步</p>
+<p><strong>CTRL-I</strong> 跳转到最新位置</p>
+<p><strong>%</strong> 配对括号查找</p>
+<h2 id="替换命令"><a href="#替换命令" class="headerlink" title="替换命令"></a>替换命令</h2><p><strong>:s/old/new &lt;回车&gt;</strong> 将光标所在行第一个old替换成new</p>
+<p><strong>:s/old/new/g &lt;回车&gt;</strong> 将光标所在行所有old替换成new</p>
+<p><strong>:#,#s/old/new/g</strong> （其中#,#代表替换替换操作的若干行首尾两行行号）</p>
+<p><strong>:%s/old/new/g</strong> 替换整个文件种的每个匹配串</p>
+<p><strong>:%s/old/new/gc</strong> 会找到整个文件中每个匹配串，并且对每个匹配串提示是否进行替换</p>
+<h2 id="VIM执行外部命令"><a href="#VIM执行外部命令" class="headerlink" title="VIM执行外部命令"></a>VIM执行外部命令</h2><p><strong>!:外部命令</strong>（包括带命令行参数的）</p>
+<p><strong>:r FILENAME</strong> 将文件提取到光标处</p>
+<p><strong>:r !ls</strong> 读取ls命令的输出到放置在光标下</p>
+<h2 id="打开类命令"><a href="#打开类命令" class="headerlink" title="打开类命令"></a>打开类命令</h2><p><strong>o</strong> 光标下方打开新一行并进入插入模式</p>
+<p><strong>O</strong> 光标上方打开新一行并进入插入模式</p>
+<h2 id="复制粘贴文本"><a href="#复制粘贴文本" class="headerlink" title="复制粘贴文本"></a>复制粘贴文本</h2><p>view模式下选择，<strong>y</strong>复制，<strong>p</strong>粘贴</p>
+<p>y也可作操作符，如<strong>yw</strong>复制一个单词</p>
+<h2 id="设置类命令选项"><a href="#设置类命令选项" class="headerlink" title="设置类命令选项"></a>设置类命令选项</h2><p><strong>:set ic</strong> (Ignore Case)忽略大小写</p>
+<p><strong>:set noic</strong> 取消忽略大小写</p>
+<p><strong>/匹配项\c &lt;回车&gt;</strong> 仅在一次查找时忽略字母大小写</p>
+<p><strong>:set hls</strong> (hlsearch) 匹配项高亮显示</p>
+<p><strong>:nohlsearch</strong> (移除匹配项高亮显示)</p>
+<p><strong>:set is</strong> (incsearch)查找短语时显示部分匹配</p>
+<p>(ps:设置中选项名可使用完整版本，也可用缩略版本)</p>
+<h2 id="使用在线帮助系统"><a href="#使用在线帮助系统" class="headerlink" title="使用在线帮助系统"></a>使用在线帮助系统</h2><p><strong>help cmd</strong> 找到关于cmd命令的帮助</p>
+<p><strong>CTRL-W CTRL-W</strong> 在窗口之前跳转</p>
+<p><strong>:q</strong> 关闭帮助窗口</p>
+<h2 id="创建vimrc"><a href="#创建vimrc" class="headerlink" title="创建vimrc"></a>创建vimrc</h2><p>启动脚本文件保存偏好设置</p>
+<h2 id="补全功能"><a href="#补全功能" class="headerlink" title="补全功能"></a>补全功能</h2><p><strong>CTRL-D</strong> 查找可能的命令补全结果</p>
+<p><strong>TAB</strong> 使用一个补全</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/02/11/My-New-Post/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>My New ...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">I know nothing.</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<button class="menu-trigger"></button>
+<div class="menu">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/person_1.jpg" alt="Budong"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>Budong</p>
+          <span class="tagline">肤浅使我快乐</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/guestbook">留言</a></li>
+        <li><a href="/about">关于</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://clarice-lj.github.io" target="_blank">Clarice</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/local.search.js"></script>
+<script src="//unpkg.com/valine"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'gkKQv6T1MDEKGaXtHhJKGOCt-gzGzoHsz',
+    appKey: '0JGnkwwsNLmJCzBQIc99Wchf',
+    placeholder: '此处留言',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+  TeX: {
+          extensions: ["mhchem.js"]
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-MML-AM_SVG"></script>
+</body>
+</html>
