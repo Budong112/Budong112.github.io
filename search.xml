@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ImageEncryption</title>
+    <url>/2020/04/15/ImageEncryption/</url>
+    <content><![CDATA[<p>记录今天上课学习的图片隐写术，核心思想就是通过改变图片RGB值将两张图嵌在一起。顺带尝试使用jupyter。</p>
+<a id="more"></a>
+
+<iframe src="https://github.com/Budong112/blog-jupyter/blob/master/Image%20Encryption.ipynb" width="800" height="1000"></iframe>]]></content>
+      <tags>
+        <tag>毫无可读性的学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>正则表达式基础</title>
     <url>/2020/02/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>虽然之前看过一点正则表达式的知识，但主要由于没有使用机会，所以基本上都记不下来。在实验楼上学习Linux教程时，里面刚好有grep,awk,sed三种命令的简单使用，而正则表达式又是它们使用的基本方式，所以我就额外记录一下，加强记忆。</p>
